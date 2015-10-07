@@ -60,10 +60,24 @@
 
 {% endblock head%}
 </head>
+{{dump(page.route)}}
 <body id="top" class="{{ page.header.body_classes }}">
     <div id="sb-site">
         {% block header %}
-        <header id="header">            
+        <header id="header">    
+            {% if grav.language.getActive is null %} 
+            <ul class="language-switch">
+                <li class="selected">PT</li>
+                <li>/</li>
+                <li><a href="en{{page.route}}">EN</a></li>
+            </ul> 
+            {% else %} 
+            <ul class="language-switch">
+                <li><a href="{{page.route}}">PT</a></li>
+                <li>/</li>
+                <li class="selected">EN</li>
+            </ul>                 
+            {% endif %} 
             <div id="logo">
                 {# <h3><a href="{{ base_url == '' ? '/' : base_url }}">{{ config.site.title }}</a></h3> #}
                 <a href="{{ base_url == '' ? '/' : base_url }}">
