@@ -2,8 +2,8 @@
 title: About
 phone: +351 961 234 567
 email: seymour@feedme.com
-morada: R. das Zdrajadas Blanjicas 10, 8 A | 1600-820 Lisboa | Portugal
-google_maps: [38.7848405, -9.1120921]
+morada: ["Passeio da Vila Expo 13, 4º A", "1990-430 Lisboa", "Portugal"]
+google_maps: [38.7813712, -9.095649]
 ---
 
 ###This is what we do
