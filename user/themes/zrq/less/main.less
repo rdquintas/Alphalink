@@ -1,0 +1,135 @@
+.page-home {
+    li {
+        .title {
+            text-transform: uppercase;
+        }
+        &:nth-child(3n+1) {
+            clear: left
+        }
+        list-style-type: none;
+        float: left;
+        width: 31.3333%;
+        margin: 1%;
+        img {
+            width: 100%;
+        }
+    }
+    ul#da-thumbs {
+        .clearfix();
+        padding: 0;
+    }
+    .white-layer {
+        background-color: #fff;
+        opacity: 0.8;
+        img {
+            &.hero {
+                display: block;
+                width: 100%;
+            }
+            &.hero-mobile {
+                width: 100%;
+                display: none;
+            }
+        }
+    }
+    .portfolio {
+        margin-top: 3rem;
+        position: relative;
+        &:after {
+            width: 77px;
+            height: 8px;
+            background: @color_primary;
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            display: block;
+            left: 0;
+        }
+    }
+} // page-home
+.page-about {
+    .contacts {
+        position: relative;
+        &:after {
+            width: 77px;
+            height: 8px;
+            background: @color_primary;
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            display: block;
+            left: 0;
+        }
+    }
+    .fa {
+        font-size: 2rem;
+    }
+    #map {
+        margin-top: 3rem;
+    }
+    ul {
+        p {
+            line-height: 0;
+        }
+        .clearfix();
+        padding: 0;
+        li {
+            list-style-type: none;
+            float: left;
+            width: 31.3333%;
+            margin: 1%;
+            img {
+                width: 100%;
+            }
+            &.email {
+                i {
+                    width: 100%;
+                }
+            }
+        }
+    }
+} // page-about
+.page-default {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .page-home {
+        li {
+            clear: both;
+            width: 100%;
+            margin: 0;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+        .white-layer {
+            img {
+                &.hero {
+                    display: none;
+                }
+                &.hero-mobile {
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+    .page-about {
+        ul {
+            li {
+                clear: both;
+                width: 100%;
+                margin: 0;
+                border-bottom: 1px solid #ddd;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

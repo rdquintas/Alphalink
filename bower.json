@@ -1,0 +1,15 @@
+{
+  "name": "zrq",
+  "version": "1.0.0",
+  "authors": [
+    "Ricardo Quintas <rqcenter-web@yahoo.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "echojs": "~1.7.3",
+    "fontawesome": "latest",
+    "magnific-popup": "~1.0.0"
+  }
+}

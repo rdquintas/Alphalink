@@ -1,0 +1,131 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 2px;
+    // text-transform: uppercase;
+    line-height: 1;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    font-family: "Six Caps", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+}
+
+h1 {
+    font-size: 10rem;
+}
+
+h2 {
+    font-size: 7.5rem;
+}
+
+h3 {
+    font-size: 5rem;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+
+a {
+    color: @color_primary;
+    font-weight: 500;
+    &:hover {
+        color: #000;
+    }
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    color: #928e92;
+    font-weight: 300;
+}
+
+#header {
+    #logo {
+        width: 400px;
+        img {
+            width: 100%;
+        }
+    }
+    hr {
+        border: 0;
+        border-bottom: 1px solid #e0e0e0;
+        margin: 0;
+    }
+    #navbar {
+        a {
+            color: @color_nav_link;
+        }
+        a:hover {
+            color: @color_nav_hover;
+        }
+    }
+}
+
+#header #navbar ul.navigation li a:before,
+#header #navbar ul.navigation li a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    bottom: 0;
+    left: 0;
+    background-color: @color_primary;
+    visibility: hidden;
+}
+
+#navbar {
+    li {
+        margin-left: 60px;
+    }
+    li.with-separator:before {
+        content: '//';
+        position: absolute;
+        top: 19px;
+        left: -36px;
+        pointer-events: none;
+        font-size: 41px;
+        line-height: 40px;
+        font-family: 'Six Caps', sans-serif;
+        color: #27282a;
+    }
+}
+
+#footer {
+    .copyright {
+        font-family: 'Six Caps', sans-serif;
+        text-transform: capitalize;
+        color: #fff;
+        font-size: 32px;
+        line-height: 38px;
+        letter-spacing: 2px;
+        a {
+            color: darken(#fff, 10%);
+            &:hover {
+                color: lighten(@color_primary, 30%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    #body {
+        padding-top: 6rem;
+    }
+    #header {
+        height: 4rem;
+        #logo {
+        	width: 140px;
+            h3 {
+                font-size: 3rem;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

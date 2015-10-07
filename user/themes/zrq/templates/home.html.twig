@@ -1,0 +1,52 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	
+	{% set randomImg = random(page.media.images) %}
+
+	{% if randomImg.basename starts with 'mobile' == false %}
+		{% set img = page.media.images[randomImg.filename].cropZoom(1300,400) %}
+		{% set img_mobile = page.media.images['mobile_' ~ randomImg.filename].cropZoom(450,600) %}
+	{% else %}
+		{% set img = page.media.images[randomImg.filename|split("mobile_")[1]].cropZoom(1300,400) %}
+		{% set img_mobile = page.media.images[randomImg.filename].cropZoom(450,600) %}
+	{% endif %}
+	
+
+	{% if img_mobile is null %}
+		{% set img_mobile = img.cropZoom(1300,400) %}
+	{% endif %}	
+	
+	{% set collection = page.collection() %}
+
+	<section class="page-default page-home">		
+		<div class="white-layer">
+			<img class="hero" src="{{ img.url }}" alt="">
+			<img class="hero-mobile" src="{{ img_mobile.url }}" alt="">			
+		</div>
+
+		<h3 class="portfolio">{{ "FEATURED_PROJECTS"|t }}</h3>
+		<ul id="da-thumbs" class="da-thumbs project">
+		{% for project in collection %}			    
+	    	{# {% set img = project.media.images|first.cropZoom(300,300) %}	 #}
+	    	{% set img = project.media.images|first %}	
+    		<li>
+				<h4 class="title">{{ project.title }}</h4>
+			    {% if img %}
+		    	<a class="image" href="{{ img.url }}" title="{{ project.header.small_description }}">
+		        	<img src="{{ theme_url }}/images/loading_spinner.gif" alt="" data-echo="{{ img.cropResize(360, 300).url }}">
+		        </a>
+			    {% endif %}
+				<div class="text">
+			        {% if project.header.show_readmore %}
+			        <p class="continue"><a href="{{ project.url }}">{{ "CONTINUE_READING"|t }}</a></p>
+			        {% endif %}
+			        <p class="summary">{{ project.header.small_description }}</p>
+         		</div>
+			</li>				
+	    {% endfor %}
+	    </ul>
+
+	</section>
+
+{% endblock %}

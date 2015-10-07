@@ -1,0 +1,50 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+	<script>
+		window.zrq_map1 = {{ page.header.google_maps[0] }};
+		window.zrq_map2 = {{ page.header.google_maps[1] }};
+	</script>
+	
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+	  <style>
+      #map {
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+    
+    
+	<section class="page-default page-about">
+		<h3 class="contacts">{{ "CONTACT"|t }}</h3>
+		<div id="map"></div>
+		<ul>
+			<li class="address">
+				<h3>{{ "ADDRESS"|t }}</h3>
+				<i class="fa fa-home"></i>
+				{% for str in page.header.morada %}
+					<p>{{str}}</p>
+				{% endfor %}			
+			</li>
+		
+			<li class="phone">
+				<h3>{{ "PHONES"|t }}</h3>
+				<i class="fa fa-phone"></i>
+				<p>{{page.header.phone}}</p>
+			</li>
+		
+			<li class="email">
+				<h3>E-Mail</h3>
+				<i class="fa fa-envelope-o"></i>
+				<a href="mailto:{{page.header.email}}">{{page.header.email}}</a>
+			</li>
+		</ul>
+	
+		
+		<div class="miscelaneous">
+			<p>{{page.content}}</p>
+		</div>
+
+	</section>
+{% endblock %}

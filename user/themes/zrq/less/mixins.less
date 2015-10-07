@@ -1,0 +1,84 @@
+/***********************************************************
+ * sets borders for the main TD cells
+ ***********************************************************/
+
+.clearfix {
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+/***********************************************************
+ * adds necessary stuff for each page
+ ***********************************************************/
+
+.initializePage(@height;
+@side-rems) {
+    margin-top: @height / @scale / @scale;
+    clear: both;
+    padding-top: 1rem * @scale;
+    padding-bottom: 1rem * @scale;
+    padding-left: @side-rems * @scale * @scale;
+    padding-right: @side-rems * @scale * @scale;
+}
+/***********************************************************
+ * adds necessary stuff for each page
+ ***********************************************************/
+
+.menu-animation(@margin;
+@duration;
+@function;
+@delay) {
+    -webkit-transition-property: @margin;
+    -moz-transition-property: @margin;
+    -o-transition-property: @margin;
+    transition-property: @margin;
+    -webkit-transition-duration: @duration;
+    -moz-transition-duration: @duration;
+    -o-transition-duration: @duration;
+    transition-duration: @duration;
+    -webkit-transition-timing-function: @function;
+    -moz-transition-timing-function: @function;
+    -o-transition-timing-function: @function;
+    transition-timing-function: @function;
+    -webkit-transition-delay: @delay;
+    -moz-transition-delay: @delay;
+    -o-transition-delay: @delay;
+    transition-delay: @delay;
+}
+/***********************************************************
+ * FOOTER
+ ***********************************************************/
+
+.setHeaderFontSize(@fontsize) {
+    h1 {
+        // font-size: @body_font_size * @scale * @scale * @scale * @scale;
+        // line-height: @body_font_size * @scale * @scale * @scale * @scale * @scale;
+        font-size: @fontsize;
+        // line-height: @fontsize * @scale;
+    }
+    h2 {
+        font-size: @fontsize / @scale;
+        // line-height: @fontsize;
+    }
+    h3 {
+        font-size: @fontsize / @scale / @scale;
+        // line-height: @fontsize / @scale;
+    }
+    h4 {
+        font-size: @fontsize / @scale / @scale / @scale;
+        // line-height: @fontsize / @scale / @scale;
+    }
+    h5 {
+        font-size: @fontsize / @scale / @scale / @scale / @scale;
+        // line-height: @fontsize / @scale / @scale / @scale;
+    }
+    h6 {
+        font-size: @fontsize / @scale / @scale / @scale / @scale / @scale;
+        // line-height: @fontsize / @scale / @scale / @scale / @scale;
+        text-transform: uppercase;
+    }
+}
